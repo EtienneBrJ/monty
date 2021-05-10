@@ -18,5 +18,7 @@ void _freeCharDoublePointer(char **prmPtr)
 		prmPtr[cLoop] = NULL;
 		cLoop++;
 	}
-	free(prmPtr);
+	if (prmPtr != NULL)
+		free(prmPtr);
+	prmPtr = NULL;
 }
