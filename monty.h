@@ -45,17 +45,12 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/**
- * struct customCommand_s - struct conversion to function
- *
- * @command: flag string
- * @func: pointer to func
- */
-typedef struct customCommand_s
+typedef struct data_s
 {
-	char *commandName;
-	void (*func)(int);
-} customCommand_t;
+	char **arguments;
+} data_t;
+
+extern data_t *appData;
 
 void _addWord(char *prmWord, int *prmIndex, char **prmArray);
 int _atoi(char *prmString);
@@ -65,14 +60,15 @@ int _checkSeparators(char prmChar, char *prmSeparators);
 char *_cleanString(char *prmString);
 void _errorHandler(int prmErrorCode);
 void _freeCharDoublePointer(char **prmPtr);
-void (*_getCustomFunction(char *prmCommand))(int);
+void _freeStackList(stack_t *prmHeadNode);
+void (*_getCustomFunction(char *prmCommand))(stack_t **, unsigned int);
 char *_getword(char *prmGlobal, int prmOffset, int prmSize);
 int _inArray(char prmChar, char *prmArray);
 int _isdigit(char prmChar);
 char *_memcpy(char *prmDest, char *prmSrc, unsigned int prmLimit);
 char *_memset(char *prmString, char prmCharacter, unsigned int prmLimit);
-void _push(int);
-void _pall(int);
+void _push(stack_t **stack, unsigned int line_number);
+void _pall(stack_t **stack, unsigned int line_number);
 void *_realloc(void *prmPtr, unsigned int prmOldSize, unsigned int prmNewSize);
 int _strcmp(char *prmString1, char *prmString2);
 char *_strcpy(char *prmDest, char *prmSrc);
