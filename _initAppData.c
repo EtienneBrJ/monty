@@ -10,4 +10,6 @@ void _initAppData()
 	appData->arguments = NULL;
 	appData->buffer = NULL;
 	appData->queue = NULL;
+	appData->fileDescriptor = NULL;
+	appData->lineNumber = 0;
 }

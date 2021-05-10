@@ -9,10 +9,14 @@
  */
 int _isNumber(char *s)
 {
-	if (*s == '\0')
+	char *tmp = s;
+
+	if (tmp == NULL)
+		return (0);
+	if (*tmp == '\0' || *tmp == '\n')
 		return (1);
-	if (!_isdigit(*s))
+	if (!_isdigit(*tmp))
 		return (0);
 	else
-		return (_isNumber(s + 1));
+		return (_isNumber(tmp + 1));
 }

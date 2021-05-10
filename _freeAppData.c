@@ -11,6 +11,7 @@ void _freeAppData()
 	if (appData->queue != NULL)
 		_freeStackList(appData->queue);
 	appData->queue = NULL;
+	fclose(appData->fileDescriptor);
 	free(appData);
 	appData = NULL;
 }
