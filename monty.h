@@ -19,7 +19,8 @@
 #define MUL_STACK_TOO_SHORT 25
 #define PCHAR_EMPTY_STACK 26
 #define PCHAR_STACK_TOO_SHORT 27
-#define PCHAR_OUT_OF_RANGE 28
+#define MOD_STACK_TOO_SHORT 29
+
 
 #define BUFFER_SIZE 1024
 #define COMMAND_SEPARATOR " \n"
@@ -95,6 +96,7 @@ int _isNumber(char *s);
 char *_memcpy(char *prmDest, char *prmSrc, unsigned int prmLimit);
 char *_memset(char *prmString, char prmCharacter, unsigned int prmLimit);
 void _mul(stack_t **stack, unsigned int line_number);
+void _mod(stack_t **stack, unsigned int line_number);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 void _pchar(stack_t **stack, unsigned int line_number);
