@@ -28,6 +28,9 @@ void _errorHandler(int prmErrorCode)
 		case MALLOC_FAILED:
 			printf("Error: malloc failed\n");
 			break;
+		case SUB_STACK_TOO_SHORT:
+			printf("L%d: can't sub, stack too short\n", appData->lineNumber);
+			break;
 	}
 	_freeAppData();
 	exit(EXIT_FAILURE);

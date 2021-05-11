@@ -12,6 +12,7 @@
 #define SWAP_STACK_TOO_SHORT 18
 #define ADD_STACK_TOO_SHORT 19
 #define MALLOC_FAILED 20
+#define SUB_STACK_TOO_SHORT 21
 
 #define BUFFER_SIZE 1024
 #define COMMAND_SEPARATOR " \n"
@@ -97,6 +98,7 @@ char *_strdup(char *prmString);
 int _strlen(char *prmStr);
 char *_strncpy(char *prmDest, char *prmSrc, int prmLimit);
 char **_strtow(char *prmString, char *prmSeparators, char *prmEscapeSeparators);
+void _sub(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
 int _wordNumber(char *prmString, char *prmSeparators);
 
