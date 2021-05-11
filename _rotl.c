@@ -1,0 +1,24 @@
+#include "monty.h"
+
+void _rotl(stack_t **stack, unsigned int line_number __attribute__((unused)))
+{
+    int swap;
+    stack_t *tmp = *stack;
+
+    if (*stack == NULL || (*stack)->next == NULL)
+        return;
+
+    while (tmp->next != NULL)
+        tmp = tmp->next;
+
+    swap = tmp->n;
+
+    while (tmp->prev != NULL)
+    {
+        tmp->n = tmp->prev->n;
+        tmp = tmp->prev;
+    }
+    tmp->n = swap;
+
+    
+}

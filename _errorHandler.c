@@ -38,7 +38,7 @@ void _errorHandler(int prmErrorCode)
 			printf("L%d: can't div, stack empty\n", appData->lineNumber);
 			break;
 		case NULLABLE_NUMBER:
-			printf("L%d: division by zero\n", appData->lineNumber);
+			printf("L%d: division/mod by zero\n", appData->lineNumber);
 			break;
 		case MUL_STACK_TOO_SHORT:
 			printf("L%d: can't mul, stack too short\n", appData->lineNumber);
