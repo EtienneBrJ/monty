@@ -19,10 +19,12 @@ int main(int prmArgc, char **prmArgv)
 	appData->buffer = malloc(sizeof(char) * BUFFER_SIZE + 1);
 
 	if (appData->buffer == NULL)
-		return (EXIT_FAILURE);
+		_errorHandler(MALLOC_FAILED);
 
 	while (fgets(appData->buffer, BUFFER_SIZE, appData->fileDescriptor))
 	{
+		if (appData->buffer[0] == '\n')
+			continue;
 		appData->lineNumber++;
 		appData->arguments = _strtow(appData->buffer, COMMAND_SEPARATOR, NULL);
 

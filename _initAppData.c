@@ -5,7 +5,7 @@ void _initAppData()
 	appData = malloc(sizeof(data_t));
 
 	if (appData == NULL)
-		exit(EXIT_FAILURE);
+		_errorHandler(MALLOC_FAILED);
 
 	appData->arguments = NULL;
 	appData->buffer = NULL;

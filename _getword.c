@@ -17,7 +17,7 @@ char *_getword(char *prmGlobal, int prmOffset, int prmSize)
 	word = malloc(sizeof(char) * prmSize + 1);
 
 	if (word == NULL)
-		return (NULL);
+		_errorHandler(MALLOC_FAILED);
 
 	for (cLoop = 0; cLoop < (prmSize); cLoop++)
 		word[cLoop] = prmGlobal[prmOffset + cLoop];

@@ -26,7 +26,7 @@ void *_realloc(void *prmPtr, unsigned int prmOldSize, unsigned int prmNewSize)
 	s = malloc(prmNewSize);
 
 	if (s == NULL)
-		return (NULL);
+		_errorHandler(MALLOC_FAILED);
 
 	s = _memcpy(s, prmPtr, prmOldSize);
 	free(prmPtr);

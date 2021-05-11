@@ -7,7 +7,7 @@ stack_t *_createStack(int prmNumber)
 	new = malloc(sizeof(stack_t));
 
 	if (new == NULL)
-		return (NULL);
+		_errorHandler(MALLOC_FAILED);
 
 	new->n = prmNumber;
 	new->next = NULL;

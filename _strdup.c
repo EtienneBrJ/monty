@@ -19,7 +19,7 @@ char *_strdup(char *prmString)
 	string = malloc(sizeof(char) * (_strlen(prmString) + 1));
 
 	if (string == NULL)
-		return (NULL);
+		_errorHandler(MALLOC_FAILED);
 
 	for (cLoop = 0; cLoop < _strlen(prmString) + 1; cLoop++)
 		string[cLoop] = prmString[cLoop];

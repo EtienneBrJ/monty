@@ -18,7 +18,7 @@ void *_calloc(unsigned int prmNumber, unsigned int prmSize)
 	ptr = malloc(prmSize * prmNumber);
 
 	if (ptr == NULL)
-		return (NULL);
+		_errorHandler(MALLOC_FAILED);
 
 	ptr = _memset(ptr, 0, prmNumber * prmSize);
 
