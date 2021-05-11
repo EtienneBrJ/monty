@@ -13,6 +13,9 @@
 #define ADD_STACK_TOO_SHORT 19
 #define MALLOC_FAILED 20
 #define SUB_STACK_TOO_SHORT 21
+#define DIV_STACK_TOO_SHORT 22
+#define DIV_EMPTY_STACK 23
+#define NULLABLE_NUMBER 24
 
 #define BUFFER_SIZE 1024
 #define COMMAND_SEPARATOR " \n"
@@ -74,6 +77,7 @@ int _checkEscapeSeparators(char prmChar, char *prmEscapeSeparators);
 int _checkSeparators(char prmChar, char *prmSeparators);
 char *_cleanString(char *prmString);
 stack_t *_createStack(int prmNumber);
+void _div(stack_t **stack, unsigned int line_number);
 void _errorHandler(int prmErrorCode);
 void _freeAppData();
 void _freeCharDoublePointer(char **prmPtr);

@@ -31,6 +31,15 @@ void _errorHandler(int prmErrorCode)
 		case SUB_STACK_TOO_SHORT:
 			printf("L%d: can't sub, stack too short\n", appData->lineNumber);
 			break;
+		case DIV_STACK_TOO_SHORT:
+			printf("L%d: can't div, stack too short\n", appData->lineNumber);
+			break;
+		case DIV_EMPTY_STACK:
+			printf("L%d: can't div, stack empty\n", appData->lineNumber);
+			break;
+		case NULLABLE_NUMBER:
+			printf("L%d: division by zero\n", appData->lineNumber);
+			break;
 	}
 	_freeAppData();
 	exit(EXIT_FAILURE);
