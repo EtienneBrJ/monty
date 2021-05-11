@@ -17,6 +17,9 @@
 #define DIV_EMPTY_STACK 23
 #define NULLABLE_NUMBER 24
 #define MUL_STACK_TOO_SHORT 25
+#define PCHAR_EMPTY_STACK 26
+#define PCHAR_STACK_TOO_SHORT 27
+#define PCHAR_OUT_OF_RANGE 28
 
 #define BUFFER_SIZE 1024
 #define COMMAND_SEPARATOR " \n"
@@ -94,6 +97,7 @@ char *_memset(char *prmString, char prmCharacter, unsigned int prmLimit);
 void _mul(stack_t **stack, unsigned int line_number);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
+void _pchar(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
 void *_realloc(void *prmPtr, unsigned int prmOldSize, unsigned int prmNewSize);

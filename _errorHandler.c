@@ -43,6 +43,15 @@ void _errorHandler(int prmErrorCode)
 		case MUL_STACK_TOO_SHORT:
 			printf("L%d: can't mul, stack too short\n", appData->lineNumber);
 			break;
+		case PCHAR_EMPTY_STACK:
+			printf("L%d: can't pchar, stack empty\n", appData->lineNumber);
+			break;
+		case PCHAR_STACK_TOO_SHORT:
+			printf("L%d: can't pchar, stack too short\n", appData->lineNumber);
+			break;
+		case PCHAR_OUT_OF_RANGE:
+			printf("L%d: can't pchar, value out of range\n", appData->lineNumber);
+			break;
 	}
 	_freeAppData();
 	exit(EXIT_FAILURE);
