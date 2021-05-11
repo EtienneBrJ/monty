@@ -6,6 +6,7 @@
 #define INVALID_PARSING_ARGUMENT 12
 #define INVALID_ARGUMENT_FORMAT 13
 #define EMPTY_STACK 14
+#define STACK_TOO_SHORT 15
 
 #define BUFFER_SIZE 1024
 #define COMMAND_SEPARATOR " \n"
@@ -83,12 +84,14 @@ void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
 void *_realloc(void *prmPtr, unsigned int prmOldSize, unsigned int prmNewSize);
+int _stackLen(stack_t *stack);
 int _strcmp(char *prmString1, char *prmString2);
 char *_strcpy(char *prmDest, char *prmSrc);
 char *_strdup(char *prmString);
 int _strlen(char *prmStr);
 char *_strncpy(char *prmDest, char *prmSrc, int prmLimit);
 char **_strtow(char *prmString, char *prmSeparators, char *prmEscapeSeparators);
+void _swap(stack_t **stack, unsigned int line_number __attribute__((unused)));
 int _wordNumber(char *prmString, char *prmSeparators);
 
 #endif

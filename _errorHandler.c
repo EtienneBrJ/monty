@@ -10,6 +10,9 @@ void _errorHandler(int prmErrorCode)
 		case EMPTY_STACK:
 			printf("L%d: can't pint, stack empty\n", appData->lineNumber);
 			break;
+		case STACK_TOO_SHORT:
+			printf("L%d: can't swap, stack too short\n", appData->lineNumber);
+			break;
 	}
 	_freeAppData();
 	exit(EXIT_FAILURE);
