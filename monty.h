@@ -16,6 +16,7 @@
 #define DIV_STACK_TOO_SHORT 22
 #define DIV_EMPTY_STACK 23
 #define NULLABLE_NUMBER 24
+#define MUL_STACK_TOO_SHORT 25
 
 #define BUFFER_SIZE 1024
 #define COMMAND_SEPARATOR " \n"
@@ -90,6 +91,7 @@ void _initAppData();
 int _isNumber(char *s);
 char *_memcpy(char *prmDest, char *prmSrc, unsigned int prmLimit);
 char *_memset(char *prmString, char prmCharacter, unsigned int prmLimit);
+void _mul(stack_t **stack, unsigned int line_number);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);

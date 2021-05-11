@@ -40,6 +40,9 @@ void _errorHandler(int prmErrorCode)
 		case NULLABLE_NUMBER:
 			printf("L%d: division by zero\n", appData->lineNumber);
 			break;
+		case MUL_STACK_TOO_SHORT:
+			printf("L%d: can't mul, stack too short\n", appData->lineNumber);
+			break;
 	}
 	_freeAppData();
 	exit(EXIT_FAILURE);
