@@ -7,6 +7,7 @@
  *
  * Return: pointer function
  */
+
 void (*_getCustomFunction(char *prmCommand))(stack_t **, unsigned int)
 {
 	int i = 0;
@@ -24,11 +25,11 @@ void (*_getCustomFunction(char *prmCommand))(stack_t **, unsigned int)
 		{"pchar", _pchar},
 		{"mod", _mod},
 		{"rotl", _rotl},
-		{"rotr", _rotr}
-
+		{"rotr", _rotr},
+		{"pstr", _pstr}
 	};
 
-	while (i < 13)
+	while (i < 15)
 	{
 		if (_strcmp(prmCommand, (fp + i)->opcode) == 0)
 			return ((fp + i)->f);

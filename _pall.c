@@ -1,5 +1,15 @@
 #include "monty.h"
 
+/**
+ * _pall - prints all the values on the stack
+ *
+ * @stack: stack
+ *
+ * @line_number: line number of monty file
+ *
+ * Return: void
+**/
+
 void _pall(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	stack_t *tmp = *stack, *prev;
@@ -15,7 +25,7 @@ void _pall(stack_t **stack, unsigned int line_number __attribute__((unused)))
 
 	if (prev != NULL)
 	{
-		while(prev != NULL)
+		while (prev != NULL)
 		{
 			printf("%d\n", prev->n);
 			prev = prev->prev;

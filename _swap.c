@@ -1,5 +1,15 @@
 #include "monty.h"
 
+/**
+ * _swap - swap the top two elem of the stack
+ *
+ * @stack: stack
+ *
+ * @line_number: line number of monty file
+ *
+ * Return: void
+**/
+
 void _swap(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	stack_t *tmp = *stack, *last = NULL;
@@ -10,7 +20,7 @@ void _swap(stack_t **stack, unsigned int line_number __attribute__((unused)))
 	if (*stack == NULL)
 		_errorHandler(SWAP_EMPTY_STACK);
 
-	while(tmp != NULL)
+	while (tmp != NULL)
 	{
 		last = tmp;
 		tmp = tmp->next;

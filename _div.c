@@ -1,5 +1,15 @@
 #include "monty.h"
 
+/**
+ * _div - div the top two elem of the stack
+ *
+ * @stack: stack
+ *
+ * @line_number: line number of monty file
+ *
+ * Return: void
+**/
+
 void _div(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	stack_t *before = *stack, *last = NULL, *new;
@@ -12,7 +22,7 @@ void _div(stack_t **stack, unsigned int line_number __attribute__((unused)))
 	if (_stackLen(*stack) <= 1)
 		_errorHandler(DIV_STACK_TOO_SHORT);
 
-	while(before != NULL)
+	while (before != NULL)
 	{
 		last = before;
 		before = before->next;

@@ -1,6 +1,15 @@
 #include "monty.h"
 
-data_t *appData;
+/**
+ * main - main func
+ *
+ * @prmArgc: argc
+ *
+ * @prmArgv: argv
+ *
+ * Return: EXIT_SUCCESS(0) or EXIT_FAILURE(1)
+**/
+
 
 int main(int prmArgc, char **prmArgv)
 {

@@ -1,6 +1,12 @@
 #include "monty.h"
 
-void _initAppData()
+/**
+ * _initAppData - init variable
+ * @void: void
+ * Return: void
+ */
+
+void _initAppData(void)
 {
 	appData = malloc(sizeof(data_t));
 

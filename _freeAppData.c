@@ -1,6 +1,12 @@
 #include "monty.h"
 
-void _freeAppData()
+/**
+ * _freeAppData - free all
+ * @void: void
+ * Return: void
+ */
+
+void _freeAppData(void)
 {
 	if (appData->arguments != NULL)
 		_freeCharDoublePointer(appData->arguments);

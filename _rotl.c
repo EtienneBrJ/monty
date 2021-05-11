@@ -1,24 +1,32 @@
 #include "monty.h"
 
+/**
+ * _rotl - rotate the stack to the top
+ *
+ * @stack: stack
+ *
+ * @line_number: line number of monty file
+ *
+ * Return: void
+**/
+
 void _rotl(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
-    int swap;
-    stack_t *tmp = *stack;
+	int swap;
+	stack_t *tmp = *stack;
 
-    if (*stack == NULL || (*stack)->next == NULL)
-        return;
+	if (*stack == NULL || (*stack)->next == NULL)
+		return;
 
-    while (tmp->next != NULL)
-        tmp = tmp->next;
+	while (tmp->next != NULL)
+		tmp = tmp->next;
 
-    swap = tmp->n;
+	swap = tmp->n;
 
-    while (tmp->prev != NULL)
-    {
-        tmp->n = tmp->prev->n;
-        tmp = tmp->prev;
-    }
-    tmp->n = swap;
-
-    
+	while (tmp->prev != NULL)
+	{
+		tmp->n = tmp->prev->n;
+		tmp = tmp->prev;
+	}
+	tmp->n = swap;
 }

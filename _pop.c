@@ -1,4 +1,13 @@
 #include "monty.h"
+/**
+ * _pop - remove the top elem of the stack
+ *
+ * @stack: stack
+ *
+ * @line_number: line number of monty file
+ *
+ * Return: void
+**/
 
 void _pop(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
@@ -8,7 +17,7 @@ void _pop(stack_t **stack, unsigned int line_number __attribute__((unused)))
 	if (*stack == NULL)
 		_errorHandler(POP_EMPTY_STACK);
 
-	while(tmp != NULL)
+	while (tmp != NULL)
 	{
 		last = tmp;
 		tmp = tmp->next;

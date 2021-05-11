@@ -22,9 +22,8 @@
 #define PCHAR_OUT_OF_RANGE 28
 #define MOD_STACK_TOO_SHORT 29
 
-
 #define BUFFER_SIZE 1024
-#define COMMAND_SEPARATOR "# \n"
+#define COMMAND_SEPARATOR " \n"
 
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -44,9 +43,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -59,10 +58,21 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct data_s - variables
+ * @arguments: array of strings
+ * @buffer: buffer
+ * @fileDescriptor: monty file
+ * @queue: queue
+ * @lineNumber: line number of monty file
+ *
+ * Description: opcode and its function
+ * for stack, queues, LIFO, FIFO Holberton project
+ */
 typedef struct data_s
 {
 	char **arguments;
@@ -78,21 +88,21 @@ void _add(stack_t **stack, unsigned int line_number);
 void _addWord(char *prmWord, int *prmIndex, char **prmArray);
 int _atoi(char *prmString);
 void *_calloc(unsigned int prmNumber, unsigned int prmSize);
-int _checkArguments();
+int _checkArguments(void);
 int _checkEscapeSeparators(char prmChar, char *prmEscapeSeparators);
 int _checkSeparators(char prmChar, char *prmSeparators);
 char *_cleanString(char *prmString);
 stack_t *_createStack(int prmNumber);
 void _div(stack_t **stack, unsigned int line_number);
 void _errorHandler(int prmErrorCode);
-void _freeAppData();
+void _freeAppData(void);
 void _freeCharDoublePointer(char **prmPtr);
 void _freeStackList(stack_t *prmHeadNode);
 void (*_getCustomFunction(char *prmCommand))(stack_t **, unsigned int);
 char *_getword(char *prmGlobal, int prmOffset, int prmSize);
 int _inArray(char prmChar, char *prmArray);
 int _isdigit(char prmChar);
-void _initAppData();
+void _initAppData(void);
 int _isNumber(char *s);
 char *_memcpy(char *prmDest, char *prmSrc, unsigned int prmLimit);
 char *_memset(char *prmString, char prmCharacter, unsigned int prmLimit);
@@ -101,6 +111,7 @@ void _mod(stack_t **stack, unsigned int line_number);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 void _pchar(stack_t **stack, unsigned int line_number);
+void _pstr(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
 void *_realloc(void *prmPtr, unsigned int prmOldSize, unsigned int prmNewSize);
@@ -112,7 +123,8 @@ char *_strcpy(char *prmDest, char *prmSrc);
 char *_strdup(char *prmString);
 int _strlen(char *prmStr);
 char *_strncpy(char *prmDest, char *prmSrc, int prmLimit);
-char **_strtow(char *prmString, char *prmSeparators, char *prmEscapeSeparators);
+char **_strtow(char *prmString, char *prmSeparators,
+	       char *prmEscapeSeparators);
 void _sub(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
 int _wordNumber(char *prmString, char *prmSeparators);

@@ -1,6 +1,15 @@
 #include "monty.h"
 
-int _checkArguments()
+data_t *appData;
+
+/**
+ * _checkArguments - check arguments
+ *
+ * Return: 1
+ *
+ */
+
+int _checkArguments(void)
 {
 	if (_strcmp(appData->arguments[0], "push") == 1)
 		if (_isNumber(appData->arguments[1]) == 0)
