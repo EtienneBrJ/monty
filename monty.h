@@ -8,8 +8,10 @@
 #define PINT_EMPTY_STACK 14
 #define POP_EMPTY_STACK 15
 #define SWAP_EMPTY_STACK 16
-#define SWAP_STACK_TOO_SHORT 17
-#define MALLOC_FAILED 18
+#define ADD_EMPTY_STACK 17
+#define SWAP_STACK_TOO_SHORT 18
+#define ADD_STACK_TOO_SHORT 19
+#define MALLOC_FAILED 20
 
 #define BUFFER_SIZE 1024
 #define COMMAND_SEPARATOR " \n"
@@ -62,6 +64,7 @@ typedef struct data_s
 
 extern data_t *appData;
 
+void _add(stack_t **stack, unsigned int line_number);
 void _addWord(char *prmWord, int *prmIndex, char **prmArray);
 int _atoi(char *prmString);
 void *_calloc(unsigned int prmNumber, unsigned int prmSize);
@@ -94,7 +97,7 @@ char *_strdup(char *prmString);
 int _strlen(char *prmStr);
 char *_strncpy(char *prmDest, char *prmSrc, int prmLimit);
 char **_strtow(char *prmString, char *prmSeparators, char *prmEscapeSeparators);
-void _swap(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void _swap(stack_t **stack, unsigned int line_number);
 int _wordNumber(char *prmString, char *prmSeparators);
 
 #endif

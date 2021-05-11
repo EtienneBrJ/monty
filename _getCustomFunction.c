@@ -17,9 +17,10 @@ void (*_getCustomFunction(char *prmCommand))(stack_t **, unsigned int)
 		{"pint", _pint},
 		{"pop", _pop},
 		{"swap", _swap},
+		{"add", _add},
 	};
 
-	while (i < 5)
+	while (i < 6)
 	{
 		if (_strcmp(prmCommand, (fp + i)->opcode) == 0)
 			return ((fp + i)->f);
