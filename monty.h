@@ -105,7 +105,7 @@ void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
 void *_realloc(void *prmPtr, unsigned int prmOldSize, unsigned int prmNewSize);
 void _rotl(stack_t **stack, unsigned int line_number);
-/*void _rotr(stack_t **stack, unsigned int line_number);*/
+void _rotr(stack_t **stack, unsigned int line_number);
 int _stackLen(stack_t *stack);
 int _strcmp(char *prmString1, char *prmString2);
 char *_strcpy(char *prmDest, char *prmSrc);

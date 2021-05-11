@@ -23,12 +23,12 @@ void (*_getCustomFunction(char *prmCommand))(stack_t **, unsigned int)
 		{"mul", _mul},
 		{"pchar", _pchar},
 		{"mod", _mod},
-		{"rotl", _rotl}
-		/*{"rotr", _rotr}*/
+		{"rotl", _rotl},
+		{"rotr", _rotr}
 
 	};
 
-	while (i < 12)
+	while (i < 13)
 	{
 		if (_strcmp(prmCommand, (fp + i)->opcode) == 0)
 			return ((fp + i)->f);
