@@ -6,7 +6,7 @@ void _pint(stack_t **stack, unsigned int line_number __attribute__((unused)))
 
 	if (*stack == NULL)
 	{
-		_errorHandler(EMPTY_STACK);
+		_errorHandler(PINT_EMPTY_STACK);
 	}
 
 	while(tmp != NULL)
