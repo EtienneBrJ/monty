@@ -11,15 +11,10 @@ void _push(stack_t **stack, unsigned int line_number __attribute__((unused)))
 	if (_isNumber(appData->arguments[1]) == 0)
 		_errorHandler(INVALID_ARGUMENT_FORMAT);
 
-	new = malloc(sizeof(stack_t));
+	new = _createStack(_atoi(appData->arguments[1]));
 
 	if (new == NULL)
-	{
 		return;
-	}
-
-	new->n = _atoi(appData->arguments[1]);
-	new->next = NULL;
 
 	if (*stack == NULL)
 	{
