@@ -2,7 +2,6 @@
 
 void _pop(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
-	printf("Pop function\n");
 	stack_t *tmp = *stack, *last = NULL;
 	int eraseHead = 0;
 
