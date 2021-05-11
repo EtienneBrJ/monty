@@ -8,6 +8,9 @@ void _push(stack_t **stack, unsigned int line_number __attribute__((unused)))
 	new = NULL;
 	tmp = *stack;
 
+	if (_isNumber(appData->arguments[1]) == 0)
+		_errorHandler(INVALID_ARGUMENT_FORMAT);
+
 	new = malloc(sizeof(stack_t));
 
 	if (new == NULL)

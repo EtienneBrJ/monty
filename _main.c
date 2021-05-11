@@ -26,15 +26,13 @@ int main(int prmArgc, char **prmArgv)
 		appData->lineNumber++;
 		appData->arguments = _strtow(appData->buffer, COMMAND_SEPARATOR, NULL);
 
-		_checkArguments();
-
 		if (appData->arguments == NULL)
 			_errorHandler(INVALID_PARSING_ARGUMENT);
 
 		func = _getCustomFunction(appData->arguments[0]);
 
 		if (func != NULL)
-			func(&appData->queue, 1);
+			func(&appData->queue, appData->lineNumber);
 		_freeCharDoublePointer(appData->arguments);
 		appData->arguments = NULL;
 	}
