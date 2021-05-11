@@ -19,11 +19,12 @@
 #define MUL_STACK_TOO_SHORT 25
 #define PCHAR_EMPTY_STACK 26
 #define PCHAR_STACK_TOO_SHORT 27
+#define PCHAR_OUT_OF_RANGE 28
 #define MOD_STACK_TOO_SHORT 29
 
 
 #define BUFFER_SIZE 1024
-#define COMMAND_SEPARATOR " \n"
+#define COMMAND_SEPARATOR "# \n"
 
 #include <sys/types.h>
 #include <sys/stat.h>
