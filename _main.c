@@ -25,7 +25,11 @@ int main(int prmArgc, char **prmArgv)
 			continue;
 		if (_checkEmptyLine(appData->buffer) == 0)
 			continue;
-		appData->arguments = _strtow(appData->buffer, COMMAND_SEPARATOR, COMMENT_SEPARATOR);
+		appData->arguments = _strtow(
+			appData->buffer,
+			COMMAND_SEPARATOR,
+			COMMENT_SEPARATOR
+		);
 
 		if (appData->arguments == NULL)
 			_errorHandler(INVALID_PARSING_ARGUMENT);
