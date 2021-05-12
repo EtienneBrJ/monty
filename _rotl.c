@@ -18,15 +18,12 @@ void _rotl(stack_t **stack, unsigned int line_number __attribute__((unused)))
 	if (*stack == NULL || (*stack)->next == NULL)
 		return;
 
-	while (tmp->next != NULL)
-		tmp = tmp->next;
-
 	swap = tmp->n;
 
-	while (tmp->prev != NULL)
+	while (tmp->next != NULL)
 	{
-		tmp->n = tmp->prev->n;
-		tmp = tmp->prev;
+		tmp->n = tmp->next->n;
+		tmp = tmp->next;
 	}
 	tmp->n = swap;
 }
