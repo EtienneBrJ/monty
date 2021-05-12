@@ -114,6 +114,7 @@ void _addWord(char *prmWord, int *prmIndex, char **prmArray);
 int _atoi(char *prmString);
 void *_calloc(unsigned int prmNumber, unsigned int prmSize);
 int _checkArguments(void);
+int _checkEmptyLine(char *prmLine);
 int _checkEscapeSeparators(char prmChar, char *prmEscapeSeparators);
 int _checkSeparators(char prmChar, char *prmSeparators);
 char *_cleanString(char *prmString);
