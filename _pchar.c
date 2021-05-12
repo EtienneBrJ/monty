@@ -20,7 +20,7 @@ void _pchar(stack_t **stack, unsigned int line_number __attribute__((unused)))
 		_errorHandler(PCHAR_STACK_TOO_SHORT);
 
 
-	if (first->n < 0 && first->n > 127)
+	if (first->n < 0 || first->n > 127)
 		_errorHandler(PCHAR_OUT_OF_RANGE);
 
 	printf("%c\n", first->n);
