@@ -12,23 +12,17 @@
 
 void _mod(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp;
-	int top1, top2;
-
-	top1 = (*stack)->n;
+	stack_t *first = *stack, *next;
+	int mod;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		_errorHandler(MOD_STACK_TOO_SHORT);
 
-	if (top1 == 0)
+	if (first->n == 0)
 		_errorHandler(NULLABLE_NUMBER);
 
-	tmp = *stack;
-	while (tmp->next->next != NULL)
-		tmp = tmp->next;
-
-	top2 = tmp->next->n;
-	tmp->n = top2 % top1;
-
+	next = first->next;
+	mod = first->n % next->n;
 	_pop(stack, line_number);
+	next->n = mod;
 }

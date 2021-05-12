@@ -10,7 +10,7 @@
 int _atoi(char *prmString)
 {
 	char sign = 1, current;
-	int size = _strlen(prmString), cLoop;
+	int size = strlen(prmString), cLoop;
 	unsigned int number = 0;
 
 	for (cLoop = 0; cLoop < size; cLoop++)

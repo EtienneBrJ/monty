@@ -1,19 +1,25 @@
 #include "monty.h"
 
-data_t *appData;
-
 /**
  * _checkArguments - check arguments
  *
- * Return: 1
- *
+ * Return: 1 if success
  */
-
 int _checkArguments(void)
 {
-	if (_strcmp(appData->arguments[0], "push") == 1)
-		if (_isNumber(appData->arguments[1]) == 0)
-			_errorHandler(INVALID_ARGUMENT_FORMAT);
+	if (strcmp(appData->arguments[0], "push") == 1)
+	{
+		if (appData->arguments[1][0] == '-')
+		{
+			if (_isNumber((appData->arguments[1] + 1)) == 0)
+				_errorHandler(INVALID_ARGUMENT_FORMAT);
+		}
+		else
+		{
+			if (_isNumber(appData->arguments[1]) == 0)
+				_errorHandler(INVALID_ARGUMENT_FORMAT);
+		}
+	}
 
 	return (1);
 }

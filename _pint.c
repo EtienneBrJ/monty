@@ -12,18 +12,10 @@
 
 void _pint(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
-	stack_t *tmp = *stack, *prev;
-
 	if (*stack == NULL)
 	{
 		_errorHandler(PINT_EMPTY_STACK);
 	}
 
-	while (tmp != NULL)
-	{
-		prev = tmp;
-		tmp = tmp->next;
-	}
-
-	printf("%d\n", prev->n);
+	printf("%d\n", (*stack)->n);
 }
