@@ -12,19 +12,14 @@
 
 void _sub(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
-	stack_t *tmp;
-	int top1, top2;
+	stack_t *first = *stack, *next;
+	int sub;
 
-	if (*stack == NULL || (*stack)->next == NULL)
+	if (first == NULL || first->next == NULL)
 		_errorHandler(SUB_STACK_TOO_SHORT);
 
-	tmp = *stack;
-	while (tmp->next->next != NULL)
-		tmp = tmp->next;
-
-	top1 = tmp->n;
-	top2 = tmp->next->n;
-	tmp->n = top1 - top2;
-
+	next = first->next;
+	sub = next->n - first->n;
+	next->n = sub;
 	_pop(stack, line_number);
 }

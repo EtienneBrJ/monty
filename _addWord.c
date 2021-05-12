@@ -10,7 +10,7 @@
 void _addWord(char *prmWord, int *prmIndex, char **prmArray)
 {
 	prmWord = _cleanString(prmWord);
-	prmArray[*prmIndex] = _strdup(prmWord);
+	prmArray[*prmIndex] = strdup(prmWord);
 	free(prmWord);
 	*prmIndex += 1;
 }

@@ -11,7 +11,7 @@
 
 void _pchar(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
-	stack_t *tmp = *stack;
+	stack_t *first = *stack;
 
 	if (*stack == NULL)
 		_errorHandler(PCHAR_EMPTY_STACK);
@@ -19,11 +19,9 @@ void _pchar(stack_t **stack, unsigned int line_number __attribute__((unused)))
 	if (_stackLen(*stack) < 1)
 		_errorHandler(PCHAR_STACK_TOO_SHORT);
 
-	while (tmp->next)
-		tmp = tmp->next;
 
-	if (tmp->n < 0 && tmp->n > 127)
+	if (first->n < 0 && first->n > 127)
 		_errorHandler(PCHAR_OUT_OF_RANGE);
 
-	printf("%c\n", tmp->n);
+	printf("%c\n", first->n);
 }
