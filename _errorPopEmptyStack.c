@@ -5,5 +5,5 @@
  */
 void _errorPopEmptyStack(void)
 {
-	fprintf(stderr, "L%d: can't pop, stack empty\n", appData->lineNumber);
+	fprintf(stderr, "L%d: can't pop an empty stack\n", appData->lineNumber);
 }
