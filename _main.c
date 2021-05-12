@@ -1,5 +1,7 @@
 #include "monty.h"
 
+data_t *appData;
+
 /**
  * main - main func
  *
@@ -10,25 +12,11 @@
  * Return: EXIT_SUCCESS(0) or EXIT_FAILURE(1)
 **/
 
-
 int main(int prmArgc, char **prmArgv)
 {
 	void (*func)(stack_t **, unsigned int);
 
-	_initAppData();
-
-	if (prmArgc != 2)
-		_errorHandler(INVALID_ARGUMENT_NUMBER);	/** @TODO: memory free to think **/
-
-	appData->fileDescriptor = fopen(prmArgv[1], "r");
-
-	if (appData->fileDescriptor == NULL)
-		_errorHandler(INVALID_FILE); /** @TODO: memory free to think **/
-
-	appData->buffer = malloc(sizeof(char) * BUFFER_SIZE + 1);
-
-	if (appData->buffer == NULL)
-		_errorHandler(MALLOC_FAILED);
+	_initAppData(prmArgc, prmArgv);
 
 	while (fgets(appData->buffer, BUFFER_SIZE, appData->fileDescriptor))
 	{

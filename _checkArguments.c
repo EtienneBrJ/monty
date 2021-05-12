@@ -1,7 +1,5 @@
 #include "monty.h"
 
-data_t *appData;
-
 /**
  * _checkArguments - check arguments
  *

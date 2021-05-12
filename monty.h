@@ -21,9 +21,17 @@
 #define PCHAR_STACK_TOO_SHORT 27
 #define PCHAR_OUT_OF_RANGE 28
 #define MOD_STACK_TOO_SHORT 29
+#define ANY_FILE 30
+#define ACCESS_DENIED 31
+#define UNKNOWN_INSTRUCTION 32
+#define INVALID_EXTENSION_FILE 33
 
 #define BUFFER_SIZE 1024
 #define COMMAND_SEPARATOR " \n"
+#define OPCODE_EXTENSION "m"
+#define LIFO 0
+#define FIFO 1
+#define COMMENT_SEPARATOR "#"
 
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -78,9 +86,16 @@ typedef struct data_s
 	char **arguments;
 	char *buffer;
 	FILE *fileDescriptor;
+	char *fileName;
 	stack_t *queue;
 	int lineNumber;
 } data_t;
+
+typedef struct error_s
+{
+	int code;
+	void (*func)();
+} error_t;
 
 extern data_t *appData;
 
@@ -95,14 +110,34 @@ char *_cleanString(char *prmString);
 stack_t *_createStack(int prmNumber);
 void _div(stack_t **stack, unsigned int line_number);
 void _errorHandler(int prmErrorCode);
+void _errorAnyFile(void);
+void _errorAccessDenied(void);
+void _errorUnknownInstruction(void);
+void _errorInvalidArgumentFormat(void);
+void _errorPintEmptyStack(void);
+void _errorPopEmptyStack(void);
+void _errorSwapEmptyStack(void);
+void _errorAddEmptyStack(void);
+void _errorDivEmptyStack(void);
+void _errorPcharEmptyStack(void);
+void _errorSwapStackTooShort(void);
+void _errorAddStackTooShort(void);
+void _errorSubStackTooShort(void);
+void _errorMulStackTooShort(void);
+void _errorPcharStackTooShort(void);
+void _errorPcharOutOfRange(void);
+void _errorMallocFailed(void);
+void _errorNullableNumber(void);
+void _errorInvalidExtensionFile(void);
 void _freeAppData(void);
 void _freeCharDoublePointer(char **prmPtr);
 void _freeStackList(stack_t *prmHeadNode);
 void (*_getCustomFunction(char *prmCommand))(stack_t **, unsigned int);
+void (*_getErrorFunction(int prmErrorCode))();
 char *_getword(char *prmGlobal, int prmOffset, int prmSize);
 int _inArray(char prmChar, char *prmArray);
 int _isdigit(char prmChar);
-void _initAppData(void);
+void _initAppData(int prmArgc, char **prmArgv);
 int _isNumber(char *s);
 char *_memcpy(char *prmDest, char *prmSrc, unsigned int prmLimit);
 char *_memset(char *prmString, char prmCharacter, unsigned int prmLimit);
