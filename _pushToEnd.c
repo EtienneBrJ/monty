@@ -18,7 +18,7 @@ void _pushToEnd(stack_t **stack)
 	new = _createStack(_atoi(appData->arguments[1]));
 
 	if (new == NULL)
-		return;
+		_errorHandler(MALLOC_FAILED);
 
 	if (*stack == NULL)
 	{
