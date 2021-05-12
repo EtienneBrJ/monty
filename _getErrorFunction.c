@@ -35,7 +35,7 @@ void (*_getErrorFunction(int prmErrorCode))()
 		{INVALID_EXTENSION_FILE, _errorInvalidExtensionFile},
 	};
 
-	while (i < 19)
+	while (i < 21)
 	{
 		if (prmErrorCode == (fp + i)->code)
 			return ((fp + i)->func);
