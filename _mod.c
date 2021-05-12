@@ -22,7 +22,7 @@ void _mod(stack_t **stack, unsigned int line_number)
 		_errorHandler(NULLABLE_NUMBER);
 
 	next = first->next;
-	mod = first->n % next->n;
+	mod = next->n % first->n;
 	_pop(stack, line_number);
 	next->n = mod;
 }

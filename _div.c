@@ -26,7 +26,7 @@ void _div(stack_t **stack, unsigned int line_number __attribute__((unused)))
 	if (next->n == 0)
 		_errorHandler(NULLABLE_NUMBER);
 
-	div = first->n / next->n;
+	div = next->n / first->n;
 	_pop(stack, line_number);
 	next->n = div;
 }
