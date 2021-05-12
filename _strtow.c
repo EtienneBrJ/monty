@@ -20,9 +20,6 @@ char **_strtow(char *prmString, char *prmSeparators, char *prmEscapeSeparators)
 	size = strlen(prmString);
 	word_number = _wordNumber(prmString, prmSeparators);
 
-	if (word_number != 2)
-		_errorHandler(INVALID_ARGUMENT_NUMBER);
-
 	if (prmString == NULL || !prmString || word_number == 0)
 		return (NULL);
 

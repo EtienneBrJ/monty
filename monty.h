@@ -76,8 +76,10 @@ typedef struct instruction_s
  * @arguments: array of strings
  * @buffer: buffer
  * @fileDescriptor: monty file
+ * @fileName: file name
  * @queue: queue
  * @lineNumber: line number of monty file
+ * @way: orientation
  *
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO Holberton project
@@ -93,6 +95,12 @@ typedef struct data_s
 	int way;
 } data_t;
 
+/**
+ * struct error_s - error structure
+ *
+ * @code: error code
+ * @func: function to handle the opcode
+ */
 typedef struct error_s
 {
 	int code;
