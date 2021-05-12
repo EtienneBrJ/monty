@@ -15,14 +15,18 @@ data_t *appData;
 int main(int prmArgc, char **prmArgv)
 {
 	void (*func)(stack_t **, unsigned int);
+	prmArgc = 2;
+	prmArgv[1] = "bytecodes/04.m";
 
 	_initAppData(prmArgc, prmArgv);
 
 	while (fgets(appData->buffer, BUFFER_SIZE, appData->fileDescriptor))
 	{
+		appData->lineNumber++;
 		if (appData->buffer[0] == '\n')
 			continue;
-		appData->lineNumber++;
+		if (_checkEmptyLine(appData->buffer) == 0)
+			continue;
 		appData->arguments = _strtow(appData->buffer, COMMAND_SEPARATOR, NULL);
 
 		if (appData->arguments == NULL)
