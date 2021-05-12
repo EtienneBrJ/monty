@@ -90,6 +90,7 @@ typedef struct data_s
 	char *fileName;
 	stack_t *queue;
 	int lineNumber;
+	int way;
 } data_t;
 
 typedef struct error_s
@@ -149,14 +150,26 @@ void _nop(
 	unsigned int line_number __attribute__((unused))
 );
 void _push(stack_t **stack, unsigned int line_number);
+void _pushToEnd(stack_t **stack);
+void _pushToStart(stack_t **stack);
 void _pall(stack_t **stack, unsigned int line_number);
+void _palFromEnd(stack_t **stack);
+void _palFromStart(stack_t **stack);
 void _pchar(stack_t **stack, unsigned int line_number);
 void _pstr(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
+void _queue(
+	stack_t **stack,
+	unsigned int line_number
+);
 void *_realloc(void *prmPtr, unsigned int prmOldSize, unsigned int prmNewSize);
 void _rotl(stack_t **stack, unsigned int line_number);
 void _rotr(stack_t **stack, unsigned int line_number);
+void _stack(
+	stack_t **stack,
+	unsigned int line_number
+);
 int _stackLen(stack_t *stack);
 char **_strtow(char *prmString, char *prmSeparators,
 	       char *prmEscapeSeparators);

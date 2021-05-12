@@ -22,6 +22,7 @@ void _initAppData(int prmArgc, char **prmArgv)
 	appData->fileDescriptor = NULL;
 	appData->lineNumber = 0;
 	appData->fileName = prmArgv[1];
+	appData->way = LIFO;
 
 	appData->fileDescriptor = fopen(appData->fileName, "r");
 
