@@ -32,6 +32,8 @@ int main(int prmArgc, char **prmArgv)
 
 		if (func != NULL)
 			func(&appData->queue, appData->lineNumber);
+		else
+			_errorHandler(UNKNOWN_INSTRUCTION);
 		_freeCharDoublePointer(appData->arguments);
 		appData->arguments = NULL;
 	}

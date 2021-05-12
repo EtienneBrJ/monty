@@ -17,7 +17,7 @@ char **_strtow(char *prmString, char *prmSeparators, char *prmEscapeSeparators)
 	if (prmString == NULL)
 		return (NULL);
 
-	size = _strlen(prmString);
+	size = strlen(prmString);
 	word_number = _wordNumber(prmString, prmSeparators);
 
 	if (prmString == NULL || !prmString || word_number == 0)

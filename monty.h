@@ -39,6 +39,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -143,6 +144,10 @@ char *_memcpy(char *prmDest, char *prmSrc, unsigned int prmLimit);
 char *_memset(char *prmString, char prmCharacter, unsigned int prmLimit);
 void _mul(stack_t **stack, unsigned int line_number);
 void _mod(stack_t **stack, unsigned int line_number);
+void _nop(
+	stack_t **stack __attribute__((unused)),
+	unsigned int line_number __attribute__((unused))
+);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 void _pchar(stack_t **stack, unsigned int line_number);
@@ -153,11 +158,6 @@ void *_realloc(void *prmPtr, unsigned int prmOldSize, unsigned int prmNewSize);
 void _rotl(stack_t **stack, unsigned int line_number);
 void _rotr(stack_t **stack, unsigned int line_number);
 int _stackLen(stack_t *stack);
-int _strcmp(char *prmString1, char *prmString2);
-char *_strcpy(char *prmDest, char *prmSrc);
-char *_strdup(char *prmString);
-int _strlen(char *prmStr);
-char *_strncpy(char *prmDest, char *prmSrc, int prmLimit);
 char **_strtow(char *prmString, char *prmSeparators,
 	       char *prmEscapeSeparators);
 void _sub(stack_t **stack, unsigned int line_number);

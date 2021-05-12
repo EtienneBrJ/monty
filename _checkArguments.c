@@ -9,7 +9,7 @@
 
 int _checkArguments(void)
 {
-	if (_strcmp(appData->arguments[0], "push") == 1)
+	if (strcmp(appData->arguments[0], "push") == 1)
 		if (_isNumber(appData->arguments[1]) == 0)
 			_errorHandler(INVALID_ARGUMENT_FORMAT);
 
