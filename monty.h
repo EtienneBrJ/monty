@@ -130,6 +130,8 @@ void _errorPopEmptyStack(void);
 void _errorSwapEmptyStack(void);
 void _errorAddEmptyStack(void);
 void _errorDivEmptyStack(void);
+void _errorDivStackTooShort(void);
+void _errorModStackTooShort(void);
 void _errorPcharEmptyStack(void);
 void _errorSwapStackTooShort(void);
 void _errorAddStackTooShort(void);

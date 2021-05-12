@@ -15,7 +15,7 @@ void _mod(stack_t **stack, unsigned int line_number)
 	stack_t *first = *stack, *next;
 	int mod;
 
-	if (*stack == NULL || (*stack)->next == NULL)
+	if (*stack == NULL || _stackLen(*stack) <= 1)
 		_errorHandler(MOD_STACK_TOO_SHORT);
 
 	if (first->n == 0)

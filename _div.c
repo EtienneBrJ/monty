@@ -15,15 +15,12 @@ void _div(stack_t **stack, unsigned int line_number __attribute__((unused)))
 	stack_t *first = *stack, *next = NULL;
 	int div;
 
-	if (*stack == NULL)
-		_errorHandler(DIV_EMPTY_STACK);
-
-	if (_stackLen(*stack) <= 1)
+	if (*stack == NULL || _stackLen(*stack) <= 1)
 		_errorHandler(DIV_STACK_TOO_SHORT);
 
 	next = first->next;
 
-	if (next->n == 0)
+	if (first->n == 0)
 		_errorHandler(NULLABLE_NUMBER);
 
 	div = next->n / first->n;
