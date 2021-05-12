@@ -29,7 +29,7 @@ void (*_getCustomFunction(char *prmCommand))(stack_t **, unsigned int)
 		{"pstr", _pstr},
 		{"nop", _nop},
 		{"queue", _queue},
-		{"stack", _stack},
+		{"stack", _stack}
 	};
 
 	while ((fp + i)->opcode)
