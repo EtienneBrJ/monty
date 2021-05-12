@@ -15,10 +15,7 @@ void _add(stack_t **stack, unsigned int line_number __attribute__((unused)))
 	stack_t *first = *stack, *next = NULL;
 	int sum;
 
-	if (*stack == NULL)
-		_errorHandler(ADD_EMPTY_STACK);
-
-	if (_stackLen(*stack) <= 1)
+	if (*stack == NULL || _stackLen(*stack) <= 1)
 		_errorHandler(ADD_STACK_TOO_SHORT);
 
 	next = first->next;
