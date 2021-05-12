@@ -35,6 +35,9 @@ char *_cleanString(char *prmString)
 		size,
 		sizeof(char) * (size - cLoopStart - cLoopEnd + 1)
 	);
+
+	if (prmString == NULL)
+		_errorHandler(MALLOC_FAILED);
 	strcpy(prmString, string);
 	prmString[size - cLoopStart - cLoopEnd] = '\0';
 	free(string);

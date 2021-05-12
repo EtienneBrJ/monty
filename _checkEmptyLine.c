@@ -1,5 +1,10 @@
 #include "monty.h"
 
+/**
+ * _checkEmptyLine - check empty line
+ *
+ * @prmLine: string
+ */
 int _checkEmptyLine(char *prmLine)
 {
 	char *tmp = prmLine;
