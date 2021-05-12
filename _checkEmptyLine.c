@@ -4,6 +4,8 @@
  * _checkEmptyLine - check empty line
  *
  * @prmLine: string
+ *
+ * Return: 1 if success
  */
 int _checkEmptyLine(char *prmLine)
 {

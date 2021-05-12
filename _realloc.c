@@ -14,7 +14,13 @@ void *_realloc(void *prmPtr, unsigned int prmOldSize, unsigned int prmNewSize)
 	void *s = prmPtr;
 
 	if (prmPtr == NULL)
-		return (malloc(prmNewSize));
+	{
+		s = malloc(prmNewSize);
+
+		if (s == NULL)
+			_errorHandler(MALLOC_FAILED);
+		return (s);
+	}
 	if (prmNewSize == prmOldSize)
 		return (prmPtr);
 	if (prmNewSize == 0)
