@@ -15,6 +15,8 @@ data_t *appData;
 int main(int prmArgc, char **prmArgv)
 {
 	void (*func)(stack_t **, unsigned int);
+	prmArgc = 2;
+	prmArgv[1] = "bytecodes/04.m";
 
 	_initAppData(prmArgc, prmArgv);
 
@@ -25,10 +27,17 @@ int main(int prmArgc, char **prmArgv)
 			continue;
 		if (_checkEmptyLine(appData->buffer) == 0)
 			continue;
-		appData->arguments = _strtow(appData->buffer, COMMAND_SEPARATOR, NULL);
+		appData->arguments = _strtow(appData->buffer, COMMAND_SEPARATOR, COMMENT_SEPARATOR);
 
 		if (appData->arguments == NULL)
 			_errorHandler(INVALID_PARSING_ARGUMENT);
+
+		if (appData->arguments[0] == NULL)
+		{
+			_freeCharDoublePointer(appData->arguments);
+			appData->arguments = NULL;
+			continue;
+		}
 
 		func = _getCustomFunction(appData->arguments[0]);
 
