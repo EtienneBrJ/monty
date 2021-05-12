@@ -10,7 +10,7 @@ void _palFromStart(stack_t **stack)
 	stack_t *tmp = *stack;
 
 	if (tmp == NULL)
-		return;
+		_errorHandler(MALLOC_FAILED);
 
 	while (tmp != NULL)
 	{

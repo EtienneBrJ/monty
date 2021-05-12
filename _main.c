@@ -15,6 +15,8 @@ data_t *appData;
 int main(int prmArgc, char **prmArgv)
 {
 	void (*func)(stack_t **, unsigned int);
+	prmArgc = 2;
+	prmArgv[1] = "bytecodes/04.m";
 
 	_initAppData(prmArgc, prmArgv);
 
