@@ -7,7 +7,10 @@
  */
 int _checkArguments(void)
 {
-	if (strcmp(appData->arguments[0], "push") == 1)
+	if (appData->arguments[1] == NULL)
+		_errorHandler(INVALID_ARGUMENT_FORMAT);
+
+	if (strcmp(appData->arguments[0], "push") == 0)
 	{
 		if (appData->arguments[1][0] == '-')
 		{
