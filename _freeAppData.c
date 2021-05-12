@@ -8,16 +8,16 @@
 
 void _freeAppData(void)
 {
-	if (!appData && appData->arguments != NULL)
+	if (appData != NULL && appData->arguments != NULL)
 		_freeCharDoublePointer(appData->arguments);
 	appData->arguments = NULL;
-	if (!appData && appData->buffer != NULL)
+	if (appData != NULL && appData->buffer != NULL)
 		free(appData->buffer);
 	appData->buffer = NULL;
-	if (!appData && appData->queue != NULL)
+	if (appData != NULL && appData->queue != NULL)
 		_freeStackList(appData->queue);
 	appData->queue = NULL;
-	if (!appData && appData->fileDescriptor != NULL)
+	if (appData != NULL && appData->fileDescriptor != NULL)
 		fclose(appData->fileDescriptor);
 	free(appData);
 	appData = NULL;
